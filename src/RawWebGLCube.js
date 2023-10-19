@@ -100,7 +100,7 @@ function App() {
 
       // Update the modelViewMatrix with rotation
       mat4.identity(modelViewMatrix);
-      mat4.rotate(modelViewMatrix, modelViewMatrix, rotation, [0, 0, 1]);
+      mat4.rotate(modelViewMatrix, modelViewMatrix, rotation.current, [0, 0, 1]);
 
       gl.uniformMatrix4fv(gl.getUniformLocation(shaderProgram, 'uModelViewMatrix'), false, modelViewMatrix);
 
