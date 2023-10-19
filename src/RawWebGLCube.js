@@ -40,7 +40,7 @@ function createProgram(gl, vertexShader, fragmentShader) {
 
 function App() {
   const canvasRef = useRef(null);
-  let rotation = 0;
+  const rotation = useRef(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -92,7 +92,7 @@ function App() {
 
     // Animation function
     function animate() {
-      rotation += angle;
+        rotation.current += angle;
 
       // Clear the canvas
       gl.clearColor(0.0, 0.0, 0.0, 1.0);
